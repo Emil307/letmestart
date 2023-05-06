@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 interface ProgressBarProps {
   progress: number,
-  height?: string,
-  width?: string,
+  height: string,
+  width: string,
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ progress, height, width }) => {

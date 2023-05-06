@@ -8,6 +8,7 @@ export interface IWords {
   id: number,
   title: string,
   progress: number,
+  count: number,
 }
 
 export interface IWord {
