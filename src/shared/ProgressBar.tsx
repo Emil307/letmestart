@@ -10,13 +10,13 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, height, width }) =>
   const [activeProgress, setActiveProgress] = useState(0);
   
   useEffect(() => {
-      const interval = setInterval(() => {
-        if (progress !== activeProgress) {
-          setActiveProgress(activeProgress + 1);
-        }
-      }, 5);
+    const interval = setInterval(() => {
+      if (progress !== activeProgress) {
+        setActiveProgress(activeProgress + 1);
+      }
+    }, 5);
 
-      return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, [activeProgress]);
 
   return (
