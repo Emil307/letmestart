@@ -7,6 +7,7 @@ export interface IUser {
 export interface IWords {
   id: number,
   title: string,
+  progress: number,
 }
 
 export interface IWord {
@@ -16,4 +17,5 @@ export interface IWord {
   translate: string,
   img: string,
   transcription: string,
+  isLearned: boolean,
 }

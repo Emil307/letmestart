@@ -1,9 +1,9 @@
 import React from 'react'
 
-const WordsSet: React.FC = () => {
+const WordsSetPage: React.FC = () => {
   return (
     <div>WordsSet</div>
   )
 }
 
-export default WordsSet
+export default WordsSetPage;
