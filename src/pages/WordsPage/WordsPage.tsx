@@ -1,10 +1,10 @@
 import React from 'react';
 //widgets
-import WordsCard from '../widgets/WordsCard';
+import WordsCard from '../../widgets/WordsCard';
 //shared
-import Title from '../shared/Title';
-import ProgressBar from '../shared/ProgressBar';
-import Button from '../shared/Button';
+import Title from '../../shared/Title';
+import ProgressBar from '../../shared/ProgressBar';
+import Button from '../../shared/Button';
 import styled from 'styled-components';
 
 const Container = styled.div`

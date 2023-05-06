@@ -2,11 +2,11 @@ import React from 'react';
 //routing
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
-import Landing from '../pages/Landing';
-import Auth from '../pages/Auth';
-import SignUp from '../pages/SignUp';
-import WordsPage from '../pages/WordsPage';
-import WordsSetPage from '../pages/WordsSetPage';
+import Landing from '../pages/Landing/Landing';
+import Auth from '../pages/Auth/Auth';
+import SignUp from '../pages/SignUp/SignUp';
+import WordsPage from '../pages/WordsPage/WordsPage';
+import WordsSetPage from '../pages/WordsSetPage/WordsSetPage';
 //styles
 import './index.css';
 
