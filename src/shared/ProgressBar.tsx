@@ -12,7 +12,7 @@ interface ProgressBarProps {
   progress?: number,
 }
 
-const PageProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
   return (
     <Container>
       <div style={{width: `${progress}%`, height: '100%', background: '#000', borderRadius: '10px'}}></div>
@@ -20,4 +20,4 @@ const PageProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
   )
 }
 
-export default PageProgressBar
+export default ProgressBar;
