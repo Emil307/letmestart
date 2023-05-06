@@ -11,26 +11,28 @@ const ButtonContainer = styled.button`
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-  background: #06407E;
+  background: #3CEEB5;
   color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 4px 1px #0A2139;
+  box-shadow: 0px 4px 1px #ABE6EE;
   transition: all .2s ease;
   &:hover {
+    background: #ABE6EE;
     transform: translateY(4px);
-    box-shadow: 0px 0px 0px #0A2139;
+    box-shadow: 0px 0px 0px #ABE6EE;
   }
 `
 
 interface ButtonProps {
   children: React.ReactNode,
   height?: string,
-  onClick?: (e: React.MouseEvent) => void
+  width?: string,
+  onClick?: (e: React.MouseEvent) => void,
 }
 
-const Button: React.FC<ButtonProps> = ({ children, height, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ children, height, width, onClick }) => {
   return (
-    <ButtonContainer onClick={onClick} style={{height: height}}>{children}</ButtonContainer>
+    <ButtonContainer onClick={onClick} style={{height: height, width: width}}>{children}</ButtonContainer>
   )
 }
 

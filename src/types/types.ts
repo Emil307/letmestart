@@ -4,8 +4,9 @@ export interface IUser {
   password: string,
 }
 
-export interface IWords {
+export interface IWordsList {
   id: number,
+  user_id: number,
   title: string,
   progress: number,
   count: number,

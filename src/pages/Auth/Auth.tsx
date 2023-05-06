@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+// features
+import AuthForm from '../../features/AuthForm';
 // shared
+import Title from '../../shared/Title';
 import Copyright from '../../shared/Copyright';
 // images
 import logo from '../../images/uwords.svg';
@@ -17,7 +20,22 @@ const Container = styled.div`
   margin: 0 auto;
 `
 
-const Offer = styled.div``
+const Offer = styled.div`
+  height: 354px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+
+const Text = styled.p`
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #ABE6EE;
+  margin-top: 3px;
+`
 
 const Image = styled.img`
   position: absolute;
@@ -32,7 +50,13 @@ const Auth: React.FC = () => {
       <div>
         <img src={logo} alt="uwords" />
       </div>
-      <Offer></Offer>
+      <Offer>
+        <div>
+          <Title fontSize={36}>Sign in</Title>
+          <Text>Greeting! Please, enter your account</Text>
+        </div>
+        <AuthForm/>
+      </Offer>
       <div>
         <Copyright>© 2023, Bignose corporation</Copyright>
       </div>
