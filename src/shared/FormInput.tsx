@@ -2,7 +2,7 @@ import React, { ChangeEventHandler } from 'react';
 import styled from 'styled-components';
 
 const FormInputStyled = styled.input`
-  width: 455px;
+  width: 380px;
   height: 73px;
   border: 3px solid rgba(238, 238, 238, 1);
   padding-left: 20px;
@@ -13,6 +13,10 @@ const FormInputStyled = styled.input`
   line-height: 18px;
 
   color: #DECECE;
+
+  &::placeholder {
+    color: #DECECE;
+  }
 `
 
 interface FormInputProps {
