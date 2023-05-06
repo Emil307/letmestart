@@ -8,18 +8,16 @@ interface ProgressBarProps {
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ progress, height, width }) => {
   const [activeProgress, setActiveProgress] = useState(0);
-  const [visor, setVisor] = useState(0);
   
   useEffect(() => {
       const interval = setInterval(() => {
-        setActiveProgress(activeProgress + 1);
         if (progress !== activeProgress) {
-          setVisor(visor + 1)
+          setActiveProgress(activeProgress + 1);
         }
       }, 5);
 
       return () => clearInterval(interval);
-  }, [visor]);
+  }, [activeProgress]);
 
   return (
     <div style={{width: width, height: height, background: 'rgba(0, 0, 0, 0.05)', borderRadius: '10px'}}>
