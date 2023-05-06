@@ -6,7 +6,7 @@ const WordsPage: React.FC = () => {
   return (
     <>
       <H1>Words</H1>
-      <ProgressBar progress={80} />
+      <ProgressBar progress={80} height='20px' width='200px' />
     </>
   )
 }

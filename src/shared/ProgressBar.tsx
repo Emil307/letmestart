@@ -1,22 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  width: 100px;
-  height: 50px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.05);
-`
 
 interface ProgressBarProps {
   progress?: number,
+  height?: string,
+  width?: string,
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ progress, height, width }) => {
   return (
-    <Container>
-      <div style={{width: `${progress}%`, height: '100%', background: '#000', borderRadius: '10px'}}></div>
-    </Container>
+    <div style={{width: width, height: height, background: 'rgba(0, 0, 0, 0.05)', borderRadius: '10px'}}>
+      <div style={{width: `${progress}%`, height: height, background: '#000', borderRadius: '10px'}}></div>
+    </div>
   )
 }
 
