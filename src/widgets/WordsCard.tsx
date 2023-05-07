@@ -5,13 +5,14 @@ import styled from 'styled-components';
 
 const Link = styled.a`
   display: block;
+  margin-bottom: 30px;
 `
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 740px;
+  width: calc(100% - 60px);
   height: 120px;
   padding: 30px;
   background: #fff;
@@ -40,18 +41,20 @@ const Bottom = styled.div``
 
 interface WordsCardProps {
   title: string,
+  progress: number,
+  count: number,
 }
 
-const WordsCard: React.FC<WordsCardProps> = ({ title }) => {
+const WordsCard: React.FC<WordsCardProps> = ({ title, progress, count }) => {
   return (
     <Link href='/wordset'>
       <Container>
         <Top>
           <Left>
             <Title fontSize={20}>{title}</Title>
-            <CountWords>31 words</CountWords>
+            <CountWords>{count} words</CountWords>
           </Left>
-          <ProgressBar progress={70} height='10px' width='100px'/>
+          <ProgressBar progress={progress} height='10px' width='100px'/>
         </Top>
       </Container>
     </Link>

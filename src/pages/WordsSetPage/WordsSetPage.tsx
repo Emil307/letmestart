@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import WordsList from '../../widgets/WordsList';
 
 const WordsSetPage: React.FC = () => {
   return (
-    <div>WordsSet</div>
+    <>
+      <WordsList/>
+    </>
   )
 }
 
