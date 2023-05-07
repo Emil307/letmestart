@@ -4,7 +4,11 @@ import WordsItem from '../shared/WordsItem';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 770px;
+  width: 710px;
+  padding: 30px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 `
 
 const WordsList: React.FC = () => {

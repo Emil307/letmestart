@@ -12,7 +12,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 100%;
   max-width: 1200px;
-  padding: 50px 15px 0;
+  padding: 30px 15px 0;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -22,7 +22,7 @@ const Left = styled.div`
   display: flex;
   justify-content: end;
   width: 70px;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 30px);
 `
 
 const Right = styled.div`

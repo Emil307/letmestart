@@ -37,8 +37,6 @@ const CountWords = styled.span`
   color: #06407E;
 `
 
-const Bottom = styled.div``
-
 interface WordsCardProps {
   title: string,
   progress: number,
