@@ -36,6 +36,19 @@ const SignUpForm: React.FC = () => {
     }
   }, [])
 
+  function getUser(token: string) {
+    fetch('http://localhost:8000/api/v1/auth/users/me', {
+      method : 'GET',
+      headers : {"Authorization": token},
+    })
+    .then (response => response.text())
+    .then (response => {
+      response = JSON.parse(response);
+      localStorage.setItem('user', JSON.stringify(response));
+      
+    })
+  }
+
   function getToken(e: any, formData: any) {
     e.preventDefault();
     fetch('http://localhost:8000/auth/token/login/', {
@@ -45,8 +58,11 @@ const SignUpForm: React.FC = () => {
     .then (response => response.text())
     .then (response => {
       response = JSON.parse(response);
-      localStorage.setItem('token', JSON.stringify((response as any).auth_token));
-      window.location.href = "/words";
+      const token = "Token " + (response as any).auth_token;
+      localStorage.setItem('token', token);
+      if (token != "Token undefined") {
+        getUser(token);
+      }
     })
   }
 
@@ -58,10 +74,14 @@ const SignUpForm: React.FC = () => {
       method : 'POST',
       body : formData,
     })
-    .then (response => response.text())
-    .then (response => {
-      response = JSON.parse(response);
-      getToken(e, formData);
+    .then (async response => {
+      response = JSON.parse(await response.text());
+      const status = response.status;
+      if (status == 200) {
+        getToken(e, formData);
+      }
+    }).catch((err: unknown) =>  {
+      console.error(err);
     })
   }
 

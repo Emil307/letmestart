@@ -6,6 +6,7 @@ const Container = styled.span`
   align-items: center;
   height: 30px;
   padding: 0 15px;
+  background: #ADF4DB;
   border-radius: 14px;
 `
 

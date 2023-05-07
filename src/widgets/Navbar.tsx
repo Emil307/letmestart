@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
   return (
     <NavbarStyled>
       <Links>
-        <button><img src={words} alt="words" /></button>
+        <a href='/words'><img src={words} alt="words" /></a>
         <button><img src={archive} alt="archive" /></button>
         <button onClick={logout}><img src={logoutIcon} alt="logout" /></button>
       </Links>

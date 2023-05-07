@@ -3,12 +3,16 @@ import Title from '../shared/Title';
 import ProgressBar from '../shared/ProgressBar';
 import styled from 'styled-components';
 
+const Link = styled.a`
+  display: block;
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 540px;
-  height: 180px;
+  width: 740px;
+  height: 120px;
   padding: 30px;
   background: #fff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -17,10 +21,12 @@ const Container = styled.div`
 
 const Top = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: start;
   height: 47px;
 `
+
+const Left = styled.div``
 
 const CountWords = styled.span`
   font-family: 'Roboto', sans-serif;
@@ -34,15 +40,17 @@ const Bottom = styled.div``
 
 const WordsCard: React.FC = () => {
   return (
-    <Container>
-      <Top>
-        <Title fontSize={20}>В отеле</Title>
-        <CountWords>31 words</CountWords>
-      </Top>
-      <Bottom>
-        <ProgressBar progress={70} height='10px' width='100px'/>
-      </Bottom>
-    </Container>
+    <Link href='/wordset'>
+      <Container>
+        <Top>
+          <Left>
+            <Title fontSize={20}>В отеле</Title>
+            <CountWords>31 words</CountWords>
+          </Left>
+          <ProgressBar progress={70} height='10px' width='100px'/>
+        </Top>
+      </Container>
+    </Link>
   )
 }
 

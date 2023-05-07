@@ -36,6 +36,19 @@ const AuthForm: React.FC = () => {
     }
   }, [])
 
+  function getUser(token: string) {
+    fetch('http://localhost:8000/api/v1/auth/users/me', {
+      method : 'GET',
+      headers : {"Authorization": token},
+    })
+    .then (response => response.text())
+    .then (response => {
+      response = JSON.parse(response);
+      localStorage.setItem('user', JSON.stringify(response));
+      window.location.href = "/words";
+    })
+  }
+
   function submitForm(e: any) {
     const formData = new FormData(e.target);
 
@@ -47,8 +60,11 @@ const AuthForm: React.FC = () => {
     .then (response => response.text())
     .then (response => {
       response = JSON.parse(response);
-      localStorage.setItem('token', JSON.stringify((response as any).auth_token));
-      window.location.href = "/words";
+      const token = "Token " + (response as any).auth_token;
+      localStorage.setItem('token', token);
+      if (token != "Token undefined") {
+        getUser(token);
+      }
     })
   }
 

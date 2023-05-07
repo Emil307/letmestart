@@ -16,16 +16,14 @@ const Container = styled.div`
 `
 
 const WordsPage: React.FC = () => {
-  function click() {
-    console.log('click');
-  }
-
+  const user = localStorage.getItem('user');
   const token = localStorage.getItem('token');
   console.log(token);
 
   return (
     <Container>
       <Navbar/>
+      <Title fontSize={30}>Words</Title>
       <WordsCard/>
     </Container>
   )
