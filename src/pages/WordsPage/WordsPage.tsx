@@ -20,6 +20,9 @@ const WordsPage: React.FC = () => {
     console.log('click');
   }
 
+  const token = localStorage.getItem('token');
+  console.log(token);
+
   return (
     <Container>
       <Navbar/>

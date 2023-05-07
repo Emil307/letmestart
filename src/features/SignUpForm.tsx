@@ -39,7 +39,7 @@ const SignUpForm: React.FC = () => {
     .then (response => response.text())
     .then (response => {
       response = JSON.parse(response);
-      localStorage.setItem('token', response);
+      localStorage.setItem('token', JSON.stringify((response as any).auth_token));
     })
   }
 

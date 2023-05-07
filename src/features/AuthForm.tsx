@@ -30,19 +30,29 @@ const AuthForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function click(e: any) {
+  function submitForm(e: any) {
+    const formData = new FormData(e.target);
+
     e.preventDefault();
-    console.log(email);
+    fetch('http://localhost:8000/auth/token/login/', {
+      method : 'POST',
+      body : formData,
+    })
+    .then (response => response.text())
+    .then (response => {
+      response = JSON.parse(response);
+      localStorage.setItem('token', JSON.stringify((response as any).auth_token));
+    })
   }
 
   return (
-    <Form>
+    <Form onSubmit={submitForm}>
       <Inputs>
-        <FormInput placeholder='E-mail' type='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
-        <FormInput placeholder='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+        <FormInput placeholder='E-mail' type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+        <FormInput placeholder='Password' type='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
       </Inputs>
       <Buttons>
-        <Button width='150px' height='41px' onClick={click}>Continue</Button>
+        <Button width='150px' height='41px'>Continue</Button>
         <Link href='/signUp'>Sign up</Link>
       </Buttons>
     </Form>
