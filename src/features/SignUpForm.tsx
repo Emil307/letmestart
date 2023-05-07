@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+//shared
 import FormInput from '../shared/FormInput';
 import Button from '../shared/Button';
+import Link from '../shared/Link';
 
 const Form = styled.form`
   display: flex;
@@ -41,7 +43,7 @@ const SignUpForm: React.FC = () => {
       </Inputs>
       <Buttons>
         <Button width='150px' height='41px' onClick={click}>Continue</Button>
-        <a href='/auth'>Sign in</a>
+        <Link href='/auth'>Sign in</Link>
       </Buttons>
     </Form>
   )
