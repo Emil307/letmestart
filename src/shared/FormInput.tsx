@@ -22,13 +22,14 @@ const FormInputStyled = styled.input`
 interface FormInputProps {
   type?: string,
   placeholder: string,
+  name: string,
   value: string,
   onChange: ChangeEventHandler<HTMLInputElement>,
 }
 
-const FormInput: React.FC<FormInputProps> = ({ type, placeholder, value, onChange }) => {
+const FormInput: React.FC<FormInputProps> = ({ type, placeholder, name, value, onChange }) => {
   return (
-    <FormInputStyled placeholder={placeholder} type={type} value={value} onChange={onChange}/>
+    <FormInputStyled placeholder={placeholder} type={type} name={name} value={value} onChange={onChange}/>
   )
 }
 

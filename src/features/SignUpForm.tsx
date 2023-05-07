@@ -30,19 +30,42 @@ const SignUpForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function click(e: any) {
+  function getToken(e: any, formData: any) {
     e.preventDefault();
-    console.log(email);
+    fetch('http://localhost:8000/auth/token/login/', {
+      method : 'POST',
+      body : formData,
+    })
+    .then (response => response.text())
+    .then (response => {
+      response = JSON.parse(response);
+      localStorage.setItem('token', response);
+    })
+  }
+
+  function regForm(e: any) {
+    const formData = new FormData(e.target);
+
+    e.preventDefault();
+    fetch('http://localhost:8000/api/v1/auth/users/', {
+      method : 'POST',
+      body : formData,
+    })
+    .then (response => response.text())
+    .then (response => {
+      response = JSON.parse(response);
+      getToken(e, formData);
+    })
   }
 
   return (
-    <Form>
+    <Form onSubmit={regForm}>
       <Inputs>
-        <FormInput placeholder='E-mail' type='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
-        <FormInput placeholder='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+        <FormInput placeholder='E-mail' type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+        <FormInput placeholder='Password' type='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
       </Inputs>
       <Buttons>
-        <Button width='150px' height='41px' onClick={click}>Continue</Button>
+        <Button width='150px' height='41px'>Continue</Button>
         <Link href='/auth'>Sign in</Link>
       </Buttons>
     </Form>
