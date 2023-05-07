@@ -3,10 +3,10 @@ import styled from 'styled-components';
 // features
 import AuthForm from '../../features/AuthForm';
 // shared
+import Logo from '../../shared/Logo';
 import Title from '../../shared/Title';
 import Copyright from '../../shared/Copyright';
 // images
-import logo from '../../images/uwords.svg';
 import fon from '../../images/fon.jpg';
 
 const Container = styled.div`
@@ -48,7 +48,7 @@ const Auth: React.FC = () => {
   return (
     <Container>
       <div>
-        <img src={logo} alt="uwords" />
+        <Logo />
       </div>
       <Offer>
         <div>
