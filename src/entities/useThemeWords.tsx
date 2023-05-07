@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { IWord } from '../types/types'; 
 import axios, { AxiosError } from 'axios';
 
@@ -7,9 +8,9 @@ export function useThemesWords() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const user_id = JSON.parse(localStorage.getItem('user') as string).id;
 
-  const API = 'http://localhost:8000/api/v1/word-categories/' + user_id;
+  const {id} = useParams();
+  const API = 'http://localhost:8000/api/v1/word/' + id;
 
   async function getWords() {
     try {

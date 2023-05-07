@@ -14,7 +14,7 @@ const ThemesList: React.FC = () => {
           <>
             {error && <p>{error}</p>}
             {themes.map(theme => 
-              <WordsCard title={theme.title} progress={theme.progress} count={theme.count} key={theme.id}/>
+              <WordsCard title={theme.title} progress={theme.progress} count={theme.count} id={theme.id} key={theme.id}/>
             )}
           </>
           :

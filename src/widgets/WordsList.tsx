@@ -1,12 +1,15 @@
 import React from 'react';
 import { useThemesWords } from '../entities/useThemeWords';
 import WordsItem from '../shared/WordsItem';
+import styled from 'styled-components';
+
+const Container = styled.div``
 
 const WordsList: React.FC = () => {
   const { words, loading, error } = useThemesWords();
 
   return (
-    <>
+    <Container>
       {loading ? <p>Loading...</p>
       :
       <>
@@ -22,7 +25,7 @@ const WordsList: React.FC = () => {
         }
       </>
       }
-    </>
+    </Container>
   )
 }
 

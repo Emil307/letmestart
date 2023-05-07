@@ -18,7 +18,7 @@ const App: React.FC = () => {
         <Route path='/auth' element={<Auth/>} />
         <Route path='/signUp' element={<SignUp/>} />
         <Route path='/words' element={<WordsPage/>} />
-        <Route path='/wordset' element={<WordsSetPage/>} />
+        <Route path={'/wordset' + '/:id'} element={<WordsSetPage/>} />
       </Routes>
     </BrowserRouter>
   )

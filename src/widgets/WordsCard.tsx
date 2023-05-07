@@ -43,11 +43,12 @@ interface WordsCardProps {
   title: string,
   progress: number,
   count: number,
+  id: number,
 }
 
-const WordsCard: React.FC<WordsCardProps> = ({ title, progress, count }) => {
+const WordsCard: React.FC<WordsCardProps> = ({ title, progress, count, id }) => {
   return (
-    <Link href='/wordset'>
+    <Link href={`/wordset/${id}`}>
       <Container>
         <Top>
           <Left>
