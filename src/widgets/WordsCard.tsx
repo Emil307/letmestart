@@ -38,13 +38,17 @@ const CountWords = styled.span`
 
 const Bottom = styled.div``
 
-const WordsCard: React.FC = () => {
+interface WordsCardProps {
+  title: string,
+}
+
+const WordsCard: React.FC<WordsCardProps> = ({ title }) => {
   return (
     <Link href='/wordset'>
       <Container>
         <Top>
           <Left>
-            <Title fontSize={20}>В отеле</Title>
+            <Title fontSize={20}>{title}</Title>
             <CountWords>31 words</CountWords>
           </Left>
           <ProgressBar progress={70} height='10px' width='100px'/>

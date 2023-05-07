@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { IWordsList } from '../types/types'; 
 import axios, { AxiosError } from 'axios';
 
-export function getThemesList() {
+export function useThemesList() {
   const [themes, setThemes] = useState<IWordsList[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
