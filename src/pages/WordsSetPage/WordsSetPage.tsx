@@ -1,4 +1,6 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useThemesList } from '../../entities/useThemesList';
 // widgets
 import WordsList from '../../widgets/WordsList';
 // shared
@@ -29,13 +31,24 @@ const Right = styled.div`
 `
 
 const WordsSetPage: React.FC = () => {
-  
+  const {id} = useParams();
+  const { themes } = useThemesList();
+
+  let theme = {};
+
+  for (let i = 0; i < themes.length; i++) {
+    if ((themes[i] as any).id == id) {
+      theme = themes[i];
+      break;
+    }
+  }
+
   return (
     <Container>
       <Left><BackArrow href='/words'/></Left>
       <WordsList/>
       <Right>
-        <ProgressBar progress={70} height='20px' width='270px'/>
+        <ProgressBar progress={(theme as any).progress + 1} height='20px' width='270px'/>
       </Right>
     </Container>
   )
