@@ -16,9 +16,6 @@ const Container = styled.div`
 `
 
 const WordsPage: React.FC = () => {
-  const user = localStorage.getItem('user');
-  const token = localStorage.getItem('token');
-  console.log(token);
 
   return (
     <Container>
