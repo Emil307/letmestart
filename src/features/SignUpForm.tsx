@@ -24,7 +24,7 @@ const Buttons = styled.div`
   align-items: center;
 `
 
-const SignUpForm = () => {
+const SignUpForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
