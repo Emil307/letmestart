@@ -23,6 +23,7 @@ const WordsPage: React.FC = () => {
   return (
     <Container>
       <Navbar/>
+      <WordsCard/>
     </Container>
   )
 }
