@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 //shared
 import FormInput from '../shared/FormInput';
@@ -29,6 +29,12 @@ const Buttons = styled.div`
 const SignUpForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      window.location.href = "/words";
+    }
+  }, [])
 
   function getToken(e: any, formData: any) {
     e.preventDefault();

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // icons
 import words from '../images/words-icon.svg';
 import archive from '../images/archive-icon.svg';
-import logout from '../images/logout-icon.svg';
+import logoutIcon from '../images/logout-icon.svg';
 
 const NavbarStyled = styled.nav`
   position: fixed;
@@ -26,12 +26,17 @@ const Links = styled.ul`
 `
 
 const Navbar: React.FC = () => {
+  function logout() {
+    localStorage.removeItem('token');
+    window.location.href = "/auth";
+  }
+
   return (
     <NavbarStyled>
       <Links>
         <button><img src={words} alt="words" /></button>
         <button><img src={archive} alt="archive" /></button>
-        <button><img src={logout} alt="logout" /></button>
+        <button onClick={logout}><img src={logoutIcon} alt="logout" /></button>
       </Links>
     </NavbarStyled>
   )
