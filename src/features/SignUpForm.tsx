@@ -24,7 +24,7 @@ const Buttons = styled.div`
   align-items: center;
 `
 
-const AuthForm: React.FC = () => {
+const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -41,10 +41,10 @@ const AuthForm: React.FC = () => {
       </Inputs>
       <Buttons>
         <Button width='150px' height='41px' onClick={click}>Continue</Button>
-        <a href='/signUp'>Sign up</a>
+        <a href='/auth'>Sign in</a>
       </Buttons>
     </Form>
   )
 }
 
-export default AuthForm;
+export default SignUpForm;

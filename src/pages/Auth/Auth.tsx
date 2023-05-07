@@ -7,7 +7,7 @@ import Title from '../../shared/Title';
 import Copyright from '../../shared/Copyright';
 // images
 import logo from '../../images/uwords.svg';
-import fon from './images/fon.jpg';
+import fon from '../../images/fon.jpg';
 
 const Container = styled.div`
   display: flex;
