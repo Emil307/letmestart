@@ -42,6 +42,7 @@ const AuthForm: React.FC = () => {
     .then (response => {
       response = JSON.parse(response);
       localStorage.setItem('token', JSON.stringify((response as any).auth_token));
+      window.location.href = "/words";
     })
   }
 
