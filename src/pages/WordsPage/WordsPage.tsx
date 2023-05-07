@@ -1,11 +1,9 @@
 import React from 'react';
 //widgets
 import Navbar from '../../widgets/Navbar';
-import WordsCard from '../../widgets/WordsCard';
+import ThemesList from '../../widgets/ThemesList';
 //shared
 import Title from '../../shared/Title';
-import ProgressBar from '../../shared/ProgressBar';
-import Button from '../../shared/Button';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -16,12 +14,11 @@ const Container = styled.div`
 `
 
 const WordsPage: React.FC = () => {
-
   return (
     <Container>
       <Navbar/>
       <Title fontSize={30}>Words</Title>
-      <WordsCard/>
+      <ThemesList/>
     </Container>
   )
 }

@@ -7,9 +7,9 @@ export function useThemesList() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const user = localStorage.getItem(JSON.parse('user')!);
+  const user_id = JSON.parse(localStorage.getItem('user') as string).id;
 
-  const API = 'http://localhost:8000/api/v1/word-categories/' + (user as any).id;
+  const API = 'http://localhost:8000/api/v1/word-categories/' + user_id;
 
   async function getThemes() {
     try {
