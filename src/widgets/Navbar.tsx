@@ -14,7 +14,7 @@ const NavbarStyled = styled.nav`
   justify-content: center;
   width: 80px;
   height: 100vh;
-  border-right: 1px rgb(239, 243, 244) solid;
+  background: #fff;
 `
 
 const Links = styled.ul`

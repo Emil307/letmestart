@@ -4,11 +4,12 @@ interface TitleProps {
   children: React.ReactNode,
   fontSize: number,
   fontWeight?: number,
+  color?: string;
 }
 
-const Title: React.FC<TitleProps> = ({ children, fontSize, fontWeight }) => {
+const Title: React.FC<TitleProps> = ({ children, fontSize, fontWeight, color }) => {
   return (
-    <h2 style={{fontFamily: "Roboto, sans-serif", fontWeight: fontWeight, fontSize: `${fontSize}px`, lineHeight: `${fontSize * 1.2}px` }}>{children}</h2>
+    <h2 style={{fontFamily: "Roboto, sans-serif", fontWeight: fontWeight, fontSize: `${fontSize}px`, lineHeight: `${fontSize * 1.2}px`, color: color }}>{children}</h2>
   )
 }
 

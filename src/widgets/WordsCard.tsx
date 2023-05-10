@@ -3,37 +3,33 @@ import Title from '../shared/Title';
 import ProgressBar from '../shared/ProgressBar';
 import styled from 'styled-components';
 
-const Link = styled.a`
-  display: block;
-  margin-bottom: 30px;
-`
+const Link = styled.a``
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: calc(100% - 60px);
-  height: 120px;
+  width: 180px;
+  height: 160px;
   padding: 30px;
   background: #fff;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px 2px rgba(60, 238, 181, 0.5);
   border-radius: 40px;
 `
 
 const Top = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: start;
   height: 47px;
 `
 
-const Left = styled.div``
-
 const CountWords = styled.span`
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
   color: #06407E;
 `
 
@@ -49,12 +45,10 @@ const WordsCard: React.FC<WordsCardProps> = ({ title, progress, count, id }) => 
     <Link href={`/wordset/${id}`}>
       <Container>
         <Top>
-          <Left>
-            <Title fontSize={20}>{title}</Title>
-            <CountWords>{count} words</CountWords>
-          </Left>
-          <ProgressBar progress={progress} height='10px' width='100px'/>
+          <Title fontSize={24}>{title}</Title>
+          <CountWords>{count} words</CountWords>
         </Top>
+        <ProgressBar progress={progress} height='15px' width='120px'/>
       </Container>
     </Link>
   )
