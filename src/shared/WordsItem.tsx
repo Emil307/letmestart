@@ -3,7 +3,6 @@ import React from 'react';
 import Title from './Title';
 // icons
 import acceptIcon from '../images/accept-icon.svg';
-import disabledIcon from '../images/disabled-icon.svg';
 // styles
 import styled from 'styled-components';
 
@@ -33,7 +32,7 @@ const WordsItem: React.FC<WordsItemProps> = ({ value, translate, isLearned }) =>
       <Span>
         {isLearned ?
           <img src={acceptIcon} alt="learned" /> :
-          <img src={disabledIcon} alt="new word" />
+          <></>
         }
       </Span>
     </Container>

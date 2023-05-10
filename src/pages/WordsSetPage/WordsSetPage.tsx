@@ -20,9 +20,9 @@ const Container = styled.div`
 
 const Left = styled.div`
   display: flex;
-  justify-content: end;
+  justify-content: center;
   width: 70px;
-  height: calc(100vh - 30px);
+  height: calc(100vh - 34px);
 `
 
 const Right = styled.div`
