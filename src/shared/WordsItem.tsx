@@ -6,12 +6,22 @@ import acceptIcon from '../images/accept-icon.svg';
 // styles
 import styled from 'styled-components';
 
-const Container = styled.div``
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+`
 
 const Content = styled.div``
 
 const Text = styled.p`
-  color: rgba(0, 0, 0, 0.3);;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+
+  color: #606060;
+  margin-top: 5px;
 `
 
 const Span = styled.span``
@@ -26,7 +36,7 @@ const WordsItem: React.FC<WordsItemProps> = ({ value, translate, isLearned }) =>
   return (
     <Container>
       <Content>
-        <Title fontSize={18}>{translate}</Title>
+        <Title fontSize={18} fontWeight={500}>{translate}</Title>
         <Text>{value}</Text>
       </Content>
       <Span>
