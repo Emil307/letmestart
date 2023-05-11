@@ -17,6 +17,7 @@ export function useThemesWords() {
       setError('');
       setLoading(true);
       const response = await axios.get<IWord[]>(`${API}`);
+      // console.log(response.data);
       setWords(response.data);
       setLoading(false);
     } catch (e: unknown) {

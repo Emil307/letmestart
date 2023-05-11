@@ -1,4 +1,5 @@
 import React from 'react';
+import { findWords } from '../entities/findWords';
 import styled from 'styled-components';
 // shared
 import Title from '../shared/Title';
@@ -36,13 +37,19 @@ interface WordsInfoProps {
 }
 
 const WordsInfo: React.FC<WordsInfoProps> = ({ progress, title }) => {
+  const learningWords = findWords();
+
+  function startLearning() {
+    console.log(learningWords);
+  }
+
   return (
     <Container>
       <Image src={fon} alt="fon" />
       <Content>
         <Title fontSize={24}>{title}</Title>
         <ProgressBar progress={progress} width='240px' height='20px'/>
-        <Button height='41px'>Continue</Button>
+        <Button onClick={startLearning} height='41px'>Continue</Button>
       </Content>
     </Container>
   )
