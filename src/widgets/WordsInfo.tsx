@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { findWords } from '../entities/findWords';
 import styled from 'styled-components';
 // shared
 import Title from '../shared/Title';
 import ProgressBar from '../shared/ProgressBar';
 import Button from '../shared/Button';
+import Popup from '../shared/Popup';
 // images
 import fon from '../images/fon.jpg';
 
@@ -37,6 +38,8 @@ interface WordsInfoProps {
 }
 
 const WordsInfo: React.FC<WordsInfoProps> = ({ progress, title }) => {
+  const [active, setActive] = useState(false);
+
   const learningWords = findWords();
 
   function startLearning() {
@@ -49,8 +52,9 @@ const WordsInfo: React.FC<WordsInfoProps> = ({ progress, title }) => {
       <Content>
         <Title fontSize={24}>{title}</Title>
         <ProgressBar progress={progress} width='240px' height='20px'/>
-        <Button onClick={startLearning} height='41px'>Continue</Button>
+        <Button onClick={() => setActive(true)} height='41px'>Continue</Button>
       </Content>
+      <Popup active={active} setActive={setActive}>f</Popup>
     </Container>
   )
 }
